@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Varsha P | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-bg: #0f172a;
+            --secondary-bg: #1e293b;
+            --accent-color: #8b5cf6;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 1.2rem 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--secondary-bg);
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li { margin: 0 1.2rem; }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover { color: var(--accent-color); }
+
+        /* HERO SECTION (No Photo) */
+        #home {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+            background: radial-gradient(circle at center, #2e1065 0%, #0f172a 70%);
+        }
+
+        #home h3 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        #home h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        #home p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+
+        .cta-btn {
+            background: var(--accent-color);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+        }
+
+        /* SECTION STYLING */
+        section { padding: 100px 15% 60px; }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        /* ABOUT SECTION */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 50px;
+        }
+
+        .edu-item {
+            background: var(--secondary-bg);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        /* SKILLS SECTION (One by One) */
+        .skills-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .skill-row {
+            margin-bottom: 25px;
+            background: var(--secondary-bg);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .skill-bar {
+            height: 12px;
+            background: #334155;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-color), #c084fc);
+            border-radius: 10px;
+        }
+
+        /* PROJECTS */
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .project-card {
+            background: var(--secondary-bg);
+            padding: 30px;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: scale(1.01);
+            background: #243146;
+        }
+
+        .project-card h3 { color: var(--accent-color); margin-bottom: 10px; }
+
+        /* CERTIFICATES */
+        .cert-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .cert-tag {
+            border: 1px solid var(--accent-color);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 500;
+        }
+
+        /* CONTACT */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .contact-box {
+            background: var(--secondary-bg);
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .contact-box i { font-size: 2rem; color: var(--accent-color); margin-bottom: 15px; }
+
+        .contact-box a { color: var(--text-main); text-decoration: none; display: block; word-break: break-all; }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-dim);
+            border-top: 1px solid var(--secondary-bg);
+        }
+
+        @media (max-width: 768px) {
+            #home h1 { font-size: 2.5rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            section { padding: 80px 5% 40px; }
+            nav ul { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">SRI VARSHA P</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home">
+        <h3>Aspiring Generative AI Engineer</h3>
+        <h1>SRI VARSHA P</h1>
+        <p>Building the future with Machine Learning and Deep Learning. Currently part of the AI Workforce team at Bannari Amman Institute of Technology.</p>
+        <a href="#contact" class="cta-btn">Get In Touch</a>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <h2 class="section-title">Professional Profile</h2>
+        <div class="about-grid">
+            <div class="bio">
+                <p>I am an undergraduate Computer Science and Engineering student focused on creating intelligent systems to solve real-world problems. My expertise lies in Computer Vision, Generative AI, and Neural Network Architectures.</p>
+                <br>
+                <p><strong>Languages:</strong> English (R,W,S), Tamil (R,W,S), Telugu (S)</p>
+            </div>
+            <div class="education">
+                <div class="edu-item">
+                    <h4>B.E - CSE</h4>
+                    <p>Bannari Amman Institute of Technology</p>
+                    <small>Expected 2028 | CGPA: 8.09</small>
+                </div>
+                <div class="edu-item">
+                    <h4>High School</h4>
+                    <p>Kongu Vellalar Matri.Hr.Sec.School</p>
+                    <small>12th: 94.5% | 10th: 92%</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION (One by One) -->
+    <section id="skills" style="background: #0b1221;">
+        <h2 class="section-title">Technical Expertise</h2>
+        <div class="skills-container">
+            <!-- Skill 1 -->
+            <div class="skill-row">
+                <div class="skill-info">
+                    <span>Machine Learning</span>
+                    <span>100%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 100%;"></div></div>
+            </div>
+            <!-- Skill 2 -->
+            <div class="skill-row">
+                <div class="skill-info">
+                    <span>Deep Learning</span>
+                    <span>75%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
+            </div>
+            <!-- Skill 3 -->
+            <div class="skill-row">
+                <div class="skill-info">
+                    <span>Python Programming</span>
+                    <span>90%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+            </div>
+            <!-- Skill 4 -->
+            <div class="skill-row">
+                <div class="skill-info">
+                    <span>Computer Vision (YOLOv8)</span>
+                    <span>85%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+            </div>
+            <!-- Skill 5 -->
+            <div class="skill-row">
+                <div class="skill-info">
+                    <span>Generative AI (Mistral/Transformers)</span>
+                    <span>70%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 70%;"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+        <h2 class="section-title">Key Projects</h2>
+        <div class="project-list">
+            <div class="project-card">
+                <h3>Face Recognition System</h3>
+                <p>Real-time identification and verification system built using Deep Learning models.</p>
+            </div>
+            <div class="project-card">
+                <h3>Text Generation using Mistral AI</h3>
+                <p>Leveraged Mistral-7B architecture to build a transformer-based natural language generation pipeline.</p>
+            </div>
+            <div class="project-card">
+                <h3>Object Detection using YOLOv8</h3>
+                <p>Advanced pipeline developed to identify and classify multiple objects in video streams.</p>
+            </div>
+            <div class="project-card">
+                <h3>Predictive Classification</h3>
+                <p>Trained and optimized ML models for high-accuracy classification on real-world datasets.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certificates" style="background: #0b1221;">
+        <h2 class="section-title">Certifications</h2>
+        <div class="cert-container">
+            <span class="cert-tag">Machine Learning - Coursera</span>
+            <span class="cert-tag">Deep Learning Specialization</span>
+            <span class="cert-tag">UI/UX Design Foundational</span>
+            <span class="cert-tag">Python for AI - Infosys Springboard</span>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <h2 class="section-title">Connect With Me</h2>
+        <div class="contact-grid">
+            <div class="contact-box">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:srivarshap.cs24@bitsathy.ac.in">srivarshap.cs24@bitsathy.ac.in</a>
+            </div>
+            <div class="contact-box">
+                <i class="fab fa-linkedin"></i>
+                <a href="https://www.linkedin.com/in/sri-varsha-p-08b361369/" target="_blank">LinkedIn Profile</a>
+            </div>
+            <div class="contact-box">
+                <i class="fab fa-github"></i>
+                <a href="https://github.com/srivarsha1409" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sri Varsha P. Designed for Generative AI Excellence.</p>
+    </footer>
+
+</body>
+</html>
